@@ -48,7 +48,6 @@ const AdminLogin = () => {
             }`}
           >
             <LoginForm
-              message1={"ADMIN ONLY"}
               logincheck={checkAdmin}
               path={"/admin/home"}
             />

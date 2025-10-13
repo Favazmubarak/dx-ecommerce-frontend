@@ -27,14 +27,15 @@ function AdminProducts() {
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this product?")) return;
     try {
-      await api.delete(`/admin/products/${id}`);
-      setProducts(products.filter((p) => p._id !== id));
+      await api.delete(`admin/products/${id}`)
+       setProducts(products.filter((p) => p._id !== id));
     } catch (err) {
+      console.log(p._id);
+      
       alert("Failed to delete product");
     }
   };
-
-  if (loading)
+if (loading)
     return (
       <div className="flex items-center justify-center h-screen text-lg font-semibold text-amber-600">
         Loading products...
@@ -79,14 +80,15 @@ function AdminProducts() {
               </thead>
               <tbody>
                 {products.length > 0 ? (
-                  products.map((product) => (
+                  products.map((product) => {
+                    return(
                     <tr
                       key={product._id}
                       className="transition border-b border-amber-100 hover:bg-amber-100"
                     >
                       <td className="px-4 py-3">
                         <img
-                          src={`http://localhost:3000${product.image}`}
+                          src={`http://localhost:3040${product.image}`}
                           alt={product.name}
                           className="object-cover w-16 h-16 mx-auto border rounded-lg border-amber-200"
                         />
@@ -124,7 +126,7 @@ function AdminProducts() {
                         </button>
                       </td>
                     </tr>
-                  ))
+                  )})
                 ) : (
                   <tr>
                     <td

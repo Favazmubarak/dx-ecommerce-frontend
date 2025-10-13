@@ -9,7 +9,7 @@ export default function Footer() {
     <footer
       onMouseEnter={() => setExpanded(true)}
       onMouseLeave={() => setExpanded(false)}
-      className={` bottom-0 left-0 w-full bg-gradient-to-br from-amber-500 to-amber-400 text-white shadow-lg transition-all duration-500 ease-in-out z-50  ${
+      className={` bottom-0 left-0 w-full bg-gradient-to-r from-amber-500 to-amber-700  text-white shadow-lg transition-all duration-500 ease-in-out z-50  ${
         expanded ? "py-5 from-bg- " : "py-3"
       }`}
     >
@@ -53,7 +53,7 @@ export default function Footer() {
 
       {/* Copyright */}
       {expanded && (
-        <div className="py-3 mt-4 text-sm font-semibold text-center transition duration-700 text-amber-800 bg-gradient-to-tr from-white to-amber-100">
+        <div className="py-3 mt-4 text-sm font-semibold text-center transition duration-700 text-amber-800 bg-gradient-to-t from-white to-amber-100">
           © {new Date().getFullYear()} WATCHWAVE — All Rights Reserved
         </div>
       )}

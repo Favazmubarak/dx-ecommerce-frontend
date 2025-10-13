@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaRegEnvelope, FaLock, FaClock } from "react-icons/fa6"; // 🕒 watch brand icon feel
+import { FaRegEnvelope, FaLock, FaWatchmanMonitoring} from "react-icons/fa6"; // 🕒 watch brand icon feel
 
 const LoginForm = ({ message1, logincheck, path }) => {
   const [email, setEmail] = useState("");
@@ -27,10 +27,7 @@ const LoginForm = ({ message1, logincheck, path }) => {
         {/* Brand Title */}
         <div className="flex flex-col items-center justify-center text-center">
           <div className="flex items-center gap-2 mb-2">
-            <FaClock className="text-3xl text-amber-500 animate-pulse" />
-            <h1 className="text-3xl font-extrabold tracking-wide text-amber-400">
-              {message1}
-            </h1>
+            <FaWatchmanMonitoring className="text-3xl text-amber-500 animate-pulse" />
           </div>
           <p className="text-sm text-gray-600">Please enter your credentials</p>
         </div>

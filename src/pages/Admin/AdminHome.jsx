@@ -65,7 +65,7 @@ const AdminHome = () => {
         className="relative flex flex-col items-center justify-center py-20 text-center"
       >
         <div className="absolute rounded-full w-72 h-72 bg-gradient-to-r from-amber-300 to-amber-100 blur-3xl opacity-40 animate-pulse"></div>
-        <h1 className="text-5xl font-extrabold tracking-wide md:text-6xl text-amber-700 drop-shadow-sm">
+        <h1 className="text-5xl font-extrabold tracking-wide md:text-6xl text-amber-600 drop-shadow-sm">
           Welcome, Admin 🕰️
         </h1>
         <p className="mt-4 text-lg text-gray-600">
