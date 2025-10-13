@@ -5,25 +5,25 @@ const Navbar = () => {
 
   return(
   <>
-   <nav className="z-50 flex items-center justify-between px-3 bg-white shadow-md" >
+   <nav className="z-50 flex flex-col items-center justify-between px-3 shadow-md lg:flex-row bg-gradient-to-br from-white via-amber-200 to-white " >
     <div className="flex items-center space-x-2">
         <img className="w-20 h-20" src={logo} alt="" />
-       <h1 className="font-mono text-2xl font-extrabold">
-             <span className="text-yellow-500">Watch</span>
-             <span className="font-normal text-gray-700">-Wave</span>
+       <h1 className="text-2xl font-extrabold ">
+             <span className="text-amber-600">Watch</span>
+             <span className="font-normal text-gray-700 ">-Wave</span>
           </h1> 
     </div>
 
            <div className="flex items-center space-x-6">
-           <label className="relative inline-flex items-center cursor-pointer">
+           <label className="relative items-center hidden cursor-pointer lg:inline-flex">
              <input type="checkbox" value="" className="sr-only peer" />
-             <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-yellow-400"></div>
+             <div className=" lg:w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-yellow-400"></div>
            </label>
            
            <ul className="flex items-center space-x-6 font-medium text-gray-700">
-             <li className="cursor-pointer hover:text-yellow-500">Home</li>
-             <li className="cursor-pointer hover:text-yellow-500">Product</li>
-             <li className="cursor-pointer hover:text-yellow-500">
+             <li className="cursor-pointer hover:text-amber-600">Home</li>
+             <li className="cursor-pointer hover:text-amber-600">Product</li>
+             <li className="cursor-pointer hover:text-amber-600">
                Category
              </li>
              <li className="relative cursor-pointer hover:text-yellow-500 group">

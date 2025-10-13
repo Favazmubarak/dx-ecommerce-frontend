@@ -1,7 +1,7 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import LoginForm from "../components/LoginForm";
-import api from "../services/axios";
+import Navbar from "../../components/Navbar";
+import LoginForm from "../../components/LoginForm";
+import api from "../../services/axios";
 
 const UserLogin = () => {
   async function checkUser(email,password ) {
@@ -20,7 +20,7 @@ const UserLogin = () => {
 
   return (
     <>
-      <LoginForm message1={"WELCOME BACK"}  logincheck={checkUser} path={"/home"} />
+      <LoginForm message1={"WELCOME BACK"}  logincheck={checkUser} />
     </>
   );
 };

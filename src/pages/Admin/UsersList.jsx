@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
-import api from "../services/axios";
+import Navbar from "../../components/Navbar";
+import api from "../../services/axios";
+import Footer from "../../components/Footer.jsx";
 
 const UsersList = () => {
   const [users, setUsers] = useState([]);
@@ -26,7 +27,6 @@ const UsersList = () => {
   return (
     <>
        <div className="min-h-screen bg-amber-50">
-      {/* Navbar */}
       <Navbar />
 
       <div className="max-w-6xl px-6 py-10 mx-auto">
@@ -74,6 +74,7 @@ const UsersList = () => {
         </div>
       </div>
     </div>
+      <Footer/>
     </>
   );
 };
