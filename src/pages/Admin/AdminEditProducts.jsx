@@ -29,7 +29,8 @@ function EditProduct() {
           description: res.data.description,
         });
 
-        setCategories(catRes.data.result || []);
+        setCategories(catRes.data|| []);
+        
         setPreview(res.data.image); // Existing image preview
       } catch (err) {
         console.error(err);
@@ -55,17 +56,19 @@ function EditProduct() {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append("name", form.name);
-    formData.append("category", form.category);
-    formData.append("price", form.price);
-    formData.append("description", form.description);
+    formData.name = form.name;
+    formData.category= form.category
+    formData.price =form.price
+    formData.description = form.description
     if (image) formData.append("image", image);
-
+    console.log(formData);
     try {
       await api.put(`/admin/products/${id}`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
       alert("✅ Product updated successfully!");
+      // console.log(formData);
+      
       navigate("/admin/products");
     } catch (err) {
       alert("❌ Failed to update product");

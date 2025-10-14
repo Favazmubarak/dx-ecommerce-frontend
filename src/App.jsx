@@ -11,6 +11,7 @@ import AdminAddCategory from "./pages/Admin/AdminAddCategory.jsx";
 import AdminCategoryEdit from "./pages/Admin/AdminEditCategory.jsx";
 import CreateProduct from "./pages/Admin/AdminCreateProducts.jsx";
 import EditProduct from "./pages/Admin/AdminEditProducts.jsx";
+import AdminOrders from "./pages/Admin/AdminOrder.jsx";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/admin/categories" element={<AdminCategories />}></Route>
         <Route path="/admin/category" element={<AdminAddCategory />} />
         <Route path="/admin/categories/:id" element={<AdminCategoryEdit/>}/>
+        <Route path="/admin/orders" element={<AdminOrders/>}/>
       </Routes>
     </>
   );
