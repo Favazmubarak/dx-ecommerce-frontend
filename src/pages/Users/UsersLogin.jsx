@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import api from "../../services/axios";
-import { FaRegClock,FaHandshake } from "react-icons/fa6";
+import {FaHandshake } from "react-icons/fa6";
 import { motion } from "framer-motion";
 
 const UserLogin = () => {
@@ -34,7 +34,6 @@ const UserLogin = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen overflow-hidden bg-gradient-to-b from-blue-950 via-slate-900 to-black">
-      <div className="absolute w-[600px] h-[600px] bg-amber-500/10 rounded-full blur-3xl animate-pulse"></div>
 
       <motion.form
         onSubmit={handleSubmit}

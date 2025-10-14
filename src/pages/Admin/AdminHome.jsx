@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import NavbarAdmin from "../../components/Navbar";
+import NavbarAdmin from "../../components/AdminNavbar";
 import Footer from "../../components/Footer";
 import api from "../../services/axios";
 import { useNavigate } from "react-router-dom";
