@@ -14,6 +14,7 @@ const OrderItems = ({ items = [] }) => {
         <ul className="space-y-3">
           {items.map((item, i) => {
             const product = item.product_id || {};
+            // console.log(item);
             
             return (
               <li

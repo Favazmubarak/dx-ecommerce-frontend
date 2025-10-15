@@ -18,7 +18,7 @@ function CreateProduct() {
     const fetchCategories = async () => {
       try {
         const res = await api.get("/admin/categories");
-        setCategories(res.data.result || []);
+        setCategories(res.data || []);
       } catch (err) {
         console.error("Failed to fetch categories");
       }

@@ -105,7 +105,7 @@ function AdminProducts() {
                         {product.name}
                       </td>
                       <td className="px-4 py-3 text-gray-600">
-                        {product.category?.name || (
+                        {product.category_id?.name || (
                           <span className="italic text-gray-400">
                             No Category
                           </span>
