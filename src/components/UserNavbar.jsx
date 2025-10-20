@@ -2,24 +2,36 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaUserCircle, FaSignOutAlt, FaShoppingCart, FaBoxOpen } from "react-icons/fa";
 import logo from "../assets/download.png";
+import api from "../services/axios";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [user, setUser] = useState(null);
 
-  // ✅ Load user from sessionStorage
+  //  Load user from sessionStorage
   useEffect(() => {
-    const savedUser = JSON.parse(sessionStorage.getItem("user"));
-    setUser(savedUser);
+
+    async function getData(){
+      
+      const savedUser = await api.get("/logined")
+      setUser(savedUser.data);
+      console.log(savedUser);
+      
+    }
+    
+    getData();
+      
+
   }, []);
 
-  // ✅ Logout function
+  // Logout function
   const handleLogout = () => {
+    api.delete("/Logout")
     sessionStorage.removeItem("user");
     setUser(null);
     setMenuOpen(false);
-    navigate("/login");
+    navigate("/user/login");
   };
 
   return (
@@ -68,7 +80,7 @@ const Navbar = () => {
           {/* Profile / Auth Dropdown */}
           <div className="relative">
             <div
-              onClick={() => setMenuOpen(!menuOpen)}
+              onClick={() => {setMenuOpen(!menuOpen) }}
               className="flex items-center gap-2 px-3 py-1 rounded-full cursor-pointer bg-amber-50 hover:bg-amber-100"
             >
               {user?.profilePic ? (
@@ -81,15 +93,18 @@ const Navbar = () => {
                 <FaUserCircle className="w-8 h-8 text-amber-600" />
               )}
               <span className="text-sm font-semibold text-gray-700">
-                {user?.name || "Guest"}
+                
+                
+                {user && user.logined ? user.name : "Guest"}
               </span>
             </div>
 
             {/* Dropdown */}
-            {menuOpen && (
+            {menuOpen
+             && (
               <div className="absolute right-0 w-40 mt-2 bg-white border rounded-lg shadow-lg border-amber-100">
                 <ul className="py-2 text-sm text-gray-700">
-                  {user ? (
+                  {user.logined ? (
                     <>
                       <li
                         onClick={() => {

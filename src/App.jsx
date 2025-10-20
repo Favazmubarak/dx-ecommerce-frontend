@@ -18,6 +18,8 @@ import PublicHome from "./pages/Public/PublicHome.jsx";
 import SpecificProducts from "./pages/Public/SpecificProducts.jsx";
 import UserProducts from "./pages/Public/UserProducts.jsx";
 import UserContact from "./pages/Public/Contact.jsx";
+import Profile from "./pages/Users/UserProfile.jsx";
+import CheckOut from "./pages/Users/CheckOut.jsx";
 // import AdminProfile from "./pages/Admin/AdminProfile.jsx";
 
 function App() {
@@ -34,6 +36,9 @@ function App() {
         <Route path="/products/:id" element={<SpecificProducts/>}/>
         <Route path="/products" element={<UserProducts/>}/>
         <Route path="/contact" element={<UserContact/>}/>
+        <Route path="/profile" element={<Profile/>}/>
+        <Route path="/placeorder" element={<CheckOut/>}/>
+
         
 
         <Route path="/admin/login" element={<AdminLogin />}></Route>

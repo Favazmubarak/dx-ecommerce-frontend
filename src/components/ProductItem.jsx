@@ -1,8 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { ShoppingCart } from "lucide-react";
+import {useCart} from "../hooks/useCart.jsx";
+
+
 
 const ProductItem = ({ id, image, name, price }) => {
+  const {addToCart}=useCart()
   return (
     <Link
       to={`/products/${id}`}
@@ -21,7 +25,7 @@ const ProductItem = ({ id, image, name, price }) => {
           <div className="transition-opacity duration-300 opacity-0 group-hover:opacity-100">
             <button
               className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white transition rounded-full shadow-md bg-amber-600 hover:bg-amber-700"
-              onClick={(e) => e.preventDefault()} // prevent redirect on click
+              onClick={(e) =>{ e.preventDefault(); e.stopPropagation(); addToCart(id);}} // prevent redirect on click
             >
               <ShoppingCart size={16} /> Add to Cart
             </button>

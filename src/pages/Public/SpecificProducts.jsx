@@ -6,12 +6,14 @@ import Footer from "../../components/Footer";
 import { ShoppingCart } from "lucide-react";
 import LatestCollection from "../../components/LatestCollection";
 import ExploreCategories from "../../components/ExploreCategories";
+import {useCart} from "../../hooks/useCart.jsx";
 
 export default function SpecificProduct() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const {addToCart} = useCart()
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -28,10 +30,12 @@ export default function SpecificProduct() {
       }
     };
     fetchProduct();
-
+    
   
     
   }, [id]);
+
+  
 
   if (loading)
     return (
@@ -87,7 +91,7 @@ export default function SpecificProduct() {
 
               {/* Add to Cart Button */}
               <button
-                onClick={() => alert("Added to cart!")}
+                onClick={() => addToCart(product._id) }
                 className="flex items-center gap-2 px-6 py-3 text-white transition-all rounded-full shadow-md bg-amber-600 hover:bg-amber-700"
               >
                 <ShoppingCart size={18} /> Add to Cart
