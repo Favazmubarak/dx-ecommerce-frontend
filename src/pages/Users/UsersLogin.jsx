@@ -62,7 +62,7 @@ const UserLogin = () => {
             className="w-full px-4 py-3 text-gray-900 bg-white rounded-lg outline-none focus:ring-2 focus:ring-amber-400 placeholder:text-gray-500"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            required
+             required
           />
 
           <input

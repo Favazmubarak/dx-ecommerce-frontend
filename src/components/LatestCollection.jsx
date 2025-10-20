@@ -25,7 +25,7 @@ const LatestCollection = () => {
   return (
     <section className="py-16 bg-gradient-to-b from-white to-amber-50">
       <div className="container px-4 mx-auto">
-        {/* Heading Section */}
+
         <div className="mb-12 text-center">
           <div className="inline-flex items-center justify-center gap-2 mb-3">
             <span className="text-sm font-semibold tracking-widest text-amber-600">
@@ -40,7 +40,6 @@ const LatestCollection = () => {
           </p>
         </div>
 
-        {/* Product Grid */}
         {loading ? (
           <p className="text-center text-gray-500">Loading products...</p>
         ) : latestP.length > 0 ? (

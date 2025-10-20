@@ -16,7 +16,7 @@ const Navbar = () => {
       
       const savedUser = await api.get("/logined")
       setUser(savedUser.data);
-      console.log(savedUser);
+      // console.log(savedUser);
       
     }
     

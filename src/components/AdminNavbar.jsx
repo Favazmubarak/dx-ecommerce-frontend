@@ -8,7 +8,7 @@ import {
   FaSignOutAlt,
   FaMoon,
   FaSun,
-  FaClipboardList, // 🆕 Added for Orders
+  FaClipboardList,
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/download.png";
@@ -21,7 +21,7 @@ const AdminNavbar = () => {
 
   const toggleDarkMode = () => setDarkMode(!darkMode);
 
-  // 🆕 Added "Orders" section to nav links
+
   const links = [
     { name: "Dashboard", icon: <FaChartLine />, path: "/admin/home" },
     { name: "Products", icon: <FaCubes />, path: "/admin/products" },

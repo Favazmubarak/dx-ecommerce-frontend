@@ -13,32 +13,32 @@ const DeliveryForm = ({ form, handleChange }) => {
       </div>
 
       <div className="flex gap-3">
-        <input required name="firstName" value={form.firstName} onChange={handleChange}
+        <input  name="firstName" value={form.firstName} onChange={handleChange}
           className="border border-gray-300 rounded py-1.5 px-3.5 w-full" type="text" placeholder="First name" />
-        <input required name="lastName" value={form.lastName} onChange={handleChange}
+        <input  name="lastName" value={form.lastName} onChange={handleChange}
           className="border border-gray-300 rounded py-1.5 px-3.5 w-full" type="text" placeholder="Last name" />
       </div>
 
-      <input required name="email" value={form.email} onChange={handleChange}
+      <input  name="email" value={form.email} onChange={handleChange}
         className="border border-gray-300 rounded py-1.5 px-3.5 w-full" type="email" placeholder="Email address" />
-      <input required name="street" value={form.street} onChange={handleChange}
+      <input  name="street" value={form.street} onChange={handleChange}
         className="border border-gray-300 rounded py-1.5 px-3.5 w-full" type="text" placeholder="Street" />
 
       <div className="flex gap-3">
-        <input required name="city" value={form.city} onChange={handleChange}
+        <input  name="city" value={form.city} onChange={handleChange}
           className="border border-gray-300 rounded py-1.5 px-3.5 w-full" type="text" placeholder="City" />
         <input name="state" value={form.state} onChange={handleChange}
           className="border border-gray-300 rounded py-1.5 px-3.5 w-full" type="text" placeholder="State" />
       </div>
 
       <div className="flex gap-3">
-        <input required name="zipcode" value={form.zipcode} onChange={handleChange}
+        <input  name="zipcode" value={form.zipcode} onChange={handleChange}
           className="border border-gray-300 rounded py-1.5 px-3.5 w-full" type="text" placeholder="Zipcode" />
-        <input required name="country" value={form.country} onChange={handleChange}
+        <input  name="country" value={form.country} onChange={handleChange}
           className="border border-gray-300 rounded py-1.5 px-3.5 w-full" type="text" placeholder="Country" />
       </div>
 
-      <input required name="phone" value={form.phone} onChange={handleChange}
+      <input  name="phone" value={form.phone} onChange={handleChange}
         className="border border-gray-300 rounded py-1.5 px-3.5 w-full" type="text" placeholder="Phone" />
     </div>
   );

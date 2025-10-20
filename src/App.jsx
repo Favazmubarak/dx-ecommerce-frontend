@@ -20,6 +20,9 @@ import UserProducts from "./pages/Public/UserProducts.jsx";
 import UserContact from "./pages/Public/Contact.jsx";
 import Profile from "./pages/Users/UserProfile.jsx";
 import CheckOut from "./pages/Users/CheckOut.jsx";
+import OrderSuccess from "./pages/Users/OrderSuccess.jsx";
+import OrderDetails from "./pages/Users/OrderDetails.jsx";
+import Shop from "./pages/Users/Shop.jsx";
 // import AdminProfile from "./pages/Admin/AdminProfile.jsx";
 
 function App() {
@@ -38,6 +41,10 @@ function App() {
         <Route path="/contact" element={<UserContact/>}/>
         <Route path="/profile" element={<Profile/>}/>
         <Route path="/placeorder" element={<CheckOut/>}/>
+        <Route path="/order-success" element={<OrderSuccess/>}/>
+        <Route path="/orders/:id" element={<OrderDetails/>}/>
+        <Route path="/shop/:id" element={<Shop/>}/>
+        <Route path="/shop" element={<Shop/>}/>
 
         
 
