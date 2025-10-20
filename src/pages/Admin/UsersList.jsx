@@ -8,6 +8,7 @@ const UsersList = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [update, setUpdate] = useState(false)
 
   useEffect(() => {
     async function fetchData() {
@@ -22,7 +23,7 @@ const UsersList = () => {
       }
     }
     fetchData();
-  }, []);
+  }, [update]);
 
   async function disableUser(id) {
     try {
@@ -30,6 +31,9 @@ const UsersList = () => {
       setUsers((prev) =>
         prev.map((u) => (u._id === id ? { ...u, isEnabled: false } : u))
       );
+
+      setUpdate(!update)      
+      
     } catch (error) {
       console.log(error);
       alert("Failed to disable user");
@@ -42,6 +46,8 @@ const UsersList = () => {
       setUsers((prev) =>
         prev.map((u) => (u._id === id ? { ...u, isEnabled: true } : u))
       );
+
+      setUpdate(!update)
     } catch (error) {
       console.log(error);
       alert("Failed to enable user");
@@ -89,7 +95,8 @@ const UsersList = () => {
 
               <tbody>
                 {users.length > 0 ? (
-                  users.map((user) => (
+                  users.map((user) => 
+                    (
                     <tr
                       key={user._id}
                       className="border-b border-amber-100 hover:bg-amber-50"
@@ -100,7 +107,7 @@ const UsersList = () => {
                       <td className="px-6 py-3 text-gray-700">{user.email}</td>
                       <td className="px-6 py-3 text-amber-700">{user.role}</td>
                       <td className="px-6 py-3 text-center">
-                        {user.isEnabled ? (
+                        {user.status ? (
                           <span className="px-3 py-1 text-xs font-semibold text-green-700 bg-green-100 rounded-full">
                             Active
                           </span>
@@ -111,7 +118,7 @@ const UsersList = () => {
                         )}
                       </td>
                       <td className="px-6 py-3 text-center">
-                        {user.isEnabled ? (
+                        {user.status ? (
                           <button
                             onClick={() => disableUser(user._id)}
                             className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-red-500 rounded-lg hover:bg-red-600"

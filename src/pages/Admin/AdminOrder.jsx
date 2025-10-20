@@ -14,6 +14,8 @@ const AdminOrders = () => {
     try {
       const res = await api.get("/admin/orders");
       setOrders(res.data.orders || []);
+      // console.log(res.data.orders);
+      
     } catch (err) {
       console.error(err);
       setError("⚠️ Failed to fetch orders");

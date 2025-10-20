@@ -1,5 +1,3 @@
-// 
-
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaUserCircle, FaSignOutAlt, FaShoppingCart, FaBoxOpen } from "react-icons/fa";
@@ -49,7 +47,23 @@ const Navbar = () => {
 
         {/* Right Icons */}
         <div className="items-center hidden gap-5 sm:flex">
-          
+          {/* Cart */}
+          <div
+            onClick={() => navigate("/user/cart")}
+            className="relative cursor-pointer hover:text-amber-600"
+            title="Cart"
+          >
+            <FaShoppingCart className="text-2xl text-gray-700 hover:text-amber-600" />
+          </div>
+
+          {/* Orders */}
+          <div
+            onClick={() => navigate("/user/orders")}
+            className="relative cursor-pointer hover:text-amber-600"
+            title="Orders"
+          >
+            <FaBoxOpen className="text-2xl text-gray-700 hover:text-amber-600" />
+          </div>
 
           {/* Profile / Auth Dropdown */}
           <div className="relative">
@@ -112,6 +126,8 @@ const Navbar = () => {
       <div className="flex justify-around py-3 text-gray-700 border-t md:hidden border-amber-100 bg-amber-50">
         <span onClick={() => navigate("/")} className="cursor-pointer hover:text-amber-600">Home</span>
         <span onClick={() => navigate("/products")} className="cursor-pointer hover:text-amber-600">Products</span>
+        <span onClick={() => navigate("/user/cart")} className="cursor-pointer hover:text-amber-600">Cart</span>
+        <span onClick={() => navigate("/user/orders")} className="cursor-pointer hover:text-amber-600">Orders</span>
       </div>
     </nav>
   );

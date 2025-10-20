@@ -1,5 +1,6 @@
 import React from "react";
 import { FaTag } from "react-icons/fa";
+import api from "../services/axios";
 
 const OrderItems = ({ items = [] }) => {
   return (
@@ -15,7 +16,7 @@ const OrderItems = ({ items = [] }) => {
           {items.map((item, i) => {
             const product = item.product_id || {};
             // console.log(item);
-            
+
             return (
               <li
                 key={i}
@@ -25,7 +26,7 @@ const OrderItems = ({ items = [] }) => {
                   {/* Product Image (if available) */}
                   {product.image ? (
                     <img
-                      src={product.image}
+                      src={`http://localhost:3040${product.image}`}
                       alt={product.id || "Product"}
                       className="object-cover w-12 h-12 border rounded-lg border-amber-200"
                     />
@@ -44,7 +45,8 @@ const OrderItems = ({ items = [] }) => {
                       Unit Price: ₹{product.price || "--"}
                     </p>
                     <p className="text-sm text-gray-600">
-                      Quantity: <span className="font-medium">{item.quantity}</span>
+                      Quantity:{" "}
+                      <span className="font-medium">{item.quantity}</span>
                     </p>
                   </div>
                 </div>

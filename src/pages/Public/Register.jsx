@@ -1,7 +1,7 @@
 import api from "../../services/axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../../components/Navbar.jsx";
+import Navbar from "../../components/UserNavbar.jsx";
 import Footer from "../../components/Footer.jsx";
 import { motion } from "framer-motion";
 import { FaUserPlus } from "react-icons/fa6";
