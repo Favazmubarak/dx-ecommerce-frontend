@@ -32,7 +32,8 @@ const OrderDetails = () => {
   if (!order) return <p className="mt-10 text-center">Order not found</p>;
 
   return (
-    <>
+    <div className="flex flex-col justify-between h-screen" >
+      <div>
       <Navbar />
       <div className="p-6">
         <h1 className="mb-4 text-2xl font-bold">Order Details</h1>
@@ -67,8 +68,10 @@ const OrderDetails = () => {
           ))}
         </div>
       </div>
+    </div>
       <Footer />
-    </>
+    </div>
+    
   );
 };
 

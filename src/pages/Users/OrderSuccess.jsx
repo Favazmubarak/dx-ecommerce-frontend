@@ -9,7 +9,7 @@ const OrderSuccess = () => {
   const order = state?.order;
 
   return (
-    <>
+    <div className="flex flex-col justify-between h-screen">
       <Navbar />
       <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw] py-20 text-center">
         <h1 className="mb-4 text-2xl font-semibold">Order Placed Successfully</h1>
@@ -27,7 +27,7 @@ const OrderSuccess = () => {
         )}
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

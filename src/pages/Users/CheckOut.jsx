@@ -108,8 +108,8 @@ const CheckOut = () => {
             <PaymentMethod submitting={submitting} />
           </div>
         </form>
-        <Footer />
       </div>
+        <Footer />
     </>
   );
 };

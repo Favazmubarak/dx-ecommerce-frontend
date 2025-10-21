@@ -76,8 +76,9 @@ const CartPage = () => {
   if (loading) return <p className="py-10 text-center">Loading...</p>;
 
   return (
-    <>
-      <Navbar />
+    <div className="flex flex-col justify-between h-screen">
+    <div>
+       <Navbar />
       <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
         <div className="border-t pt-14">
           <div className="inline-flex items-center gap-2 mb-6">
@@ -108,8 +109,9 @@ const CartPage = () => {
           )}
         </div>
       </div>
+    </div>
       <Footer />
-    </>
+    </div>
   );
 };
 
