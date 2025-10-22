@@ -20,11 +20,11 @@ const AdminAddCategory = () => {
     e.preventDefault();
     try {
       await api.post("/admin/categories", form);
-      alert("✅ New category created successfully.");
+      alert(" New category created successfully.");
       navigate("/admin/categories");
     } catch (error) {
       console.error(error);
-      alert("❌ Failed to add category. Please try again.");
+      alert("Failed to add category. Please try again.");
     }
   };
 

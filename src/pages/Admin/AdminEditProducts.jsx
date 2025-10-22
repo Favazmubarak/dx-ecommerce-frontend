@@ -34,7 +34,7 @@ function EditProduct() {
         setPreview(res.data.image); // Existing image preview
       } catch (err) {
         console.error(err);
-        alert("⚠️ Failed to load product data");
+        alert(" Failed to load product data");
       }
     };
     fetchData();
@@ -67,12 +67,12 @@ function EditProduct() {
       await api.put(`/admin/products/${id}`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-      alert("✅ Product updated successfully!");
+      alert(" Product updated successfully!");
       console.log(formData);
 
       navigate("/admin/products");
     } catch (err) {
-      alert("❌ Failed to update product");
+      alert(" Failed to update product");
     }
   };
 

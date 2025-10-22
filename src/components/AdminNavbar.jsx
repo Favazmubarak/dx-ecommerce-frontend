@@ -104,9 +104,9 @@ const AdminNavbar = () => {
           ))}
         </ul>
 
-        {/* Right Controls */}
+   
+   
         <div className="flex items-center gap-4">
-          {/* Theme Toggle */}
           <div
             onClick={toggleDarkMode}
             className={`text-lg cursor-pointer ${
@@ -153,7 +153,6 @@ const AdminNavbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <div className="block px-4 pb-3 md:hidden">
         <div className="flex justify-around text-sm">
           {links.map((link) => (

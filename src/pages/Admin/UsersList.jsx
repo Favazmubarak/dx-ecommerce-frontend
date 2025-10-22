@@ -17,7 +17,7 @@ const UsersList = () => {
         setUsers(res.data.find || []);
       } catch (error) {
         console.log(error);
-        setError("⚠️ Failed to fetch users");
+        setError(" Failed to fetch users");
       } finally {
         setLoading(false);
       }

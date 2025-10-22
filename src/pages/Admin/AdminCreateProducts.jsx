@@ -48,10 +48,10 @@ function CreateProduct() {
       await api.post("/admin/products", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-      alert("✅ Product created successfully!");
+      alert(" Product created successfully!");
       navigate("/admin/products");
     } catch (err) {
-      alert("❌ Failed to create product");
+      alert(" Failed to create product");
     }
   };
 

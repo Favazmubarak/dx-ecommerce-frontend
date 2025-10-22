@@ -22,7 +22,7 @@ const AdminCategoryEdit = () => {
         });
       } catch (error) {
         console.error(error);
-        setError("⚠️ Failed to load category details");
+        setError(" Failed to load category details");
       } finally {
         setLoading(false);
       }
@@ -38,11 +38,11 @@ const AdminCategoryEdit = () => {
     e.preventDefault();
     try {
       await api.put(`/admin/categories/${id}`, form);
-      alert("✅ Category updated successfully!");
+      alert(" Category updated successfully!");
       navigate("/admin/categories");
     } catch (error) {
       console.error(error);
-      alert("❌ Failed to update category. Please try again.");
+      alert(" Failed to update category. Please try again.");
     }
   };
 

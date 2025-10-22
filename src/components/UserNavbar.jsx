@@ -8,26 +8,31 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [user, setUser] = useState(null);
+  const [cart, setCart] = useState([]); // 🧠 Always an array
 
-  //  Load user from sessionStorage
+  // 🔁 Fetch user and cart
   useEffect(() => {
+    async function getData() {
+      try {
+        const savedUser = await api.get("/logined");
+        setUser(savedUser.data);
 
-    async function getData(){
-      
-      const savedUser = await api.get("/logined")
-      setUser(savedUser.data);
-      // console.log(savedUser);
-      
+        const res = await api.get("/cart");
+        setCart(res.data.result || []);
+      } catch (error) {
+        console.error("Error fetching user/cart:", error);
+      }
     }
-    
-    getData();
-      
 
+    getData();
+
+    // 🧩 Optional: Auto-update when 'cartUpdated' event is fired
+    window.addEventListener("cartUpdated", getData);
+    return () => window.removeEventListener("cartUpdated", getData);
   }, []);
 
-  // Logout function
   const handleLogout = () => {
-    api.delete("/Logout")
+    api.delete("/Logout");
     sessionStorage.removeItem("user");
     setUser(null);
     setMenuOpen(false);
@@ -37,7 +42,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 w-full bg-white border-b shadow-sm border-amber-100">
       <div className="flex items-center justify-between px-6 py-3 mx-auto max-w-7xl">
-        {/* Logo Section */}
+        {/* Logo */}
         <div
           onClick={() => navigate("/")}
           className="flex items-center gap-2 cursor-pointer"
@@ -49,26 +54,30 @@ const Navbar = () => {
           </h1>
         </div>
 
-        {/* Center Navigation */}
+        {/* Center Links */}
         <ul className="hidden space-x-8 font-medium text-gray-700 md:flex">
           <li className="cursor-pointer hover:text-amber-600" onClick={() => navigate("/")}>Home</li>
-          {/* <li className="cursor-pointer hover:text-amber-600" onClick={() => navigate("/categories")}>Categories</li> */}
           <li className="cursor-pointer hover:text-amber-600" onClick={() => navigate("/products")}>Products</li>
           <li className="cursor-pointer hover:text-amber-600" onClick={() => navigate("/contact")}>Contact</li>
         </ul>
 
-        {/* Right Icons */}
-        <div className="items-center hidden gap-5 sm:flex">
-          {/* Cart */}
+        {/* Right Side */}
+        <div className="items-center hidden gap-6 sm:flex">
+          {/*  Cart with count badge */}
           <div
             onClick={() => navigate("/user/cart")}
             className="relative cursor-pointer hover:text-amber-600"
             title="Cart"
           >
             <FaShoppingCart className="text-2xl text-gray-700 hover:text-amber-600" />
+            {cart.length > 0 && (
+              <span className="absolute flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-blue-500 rounded-full -top-2 -right-2">
+                {cart.length}
+              </span>
+            )}
           </div>
 
-          {/* Orders */}
+          {/*  Orders */}
           <div
             onClick={() => navigate("/user/orders")}
             className="relative cursor-pointer hover:text-amber-600"
@@ -77,10 +86,10 @@ const Navbar = () => {
             <FaBoxOpen className="text-2xl text-gray-700 hover:text-amber-600" />
           </div>
 
-          {/* Profile / Auth Dropdown */}
+          {/* 👤 Profile Dropdown */}
           <div className="relative">
             <div
-              onClick={() => {setMenuOpen(!menuOpen) }}
+              onClick={() => setMenuOpen(!menuOpen)}
               className="flex items-center gap-2 px-3 py-1 rounded-full cursor-pointer bg-amber-50 hover:bg-amber-100"
             >
               {user?.profilePic ? (
@@ -93,18 +102,14 @@ const Navbar = () => {
                 <FaUserCircle className="w-8 h-8 text-amber-600" />
               )}
               <span className="text-sm font-semibold text-gray-700">
-                
-                
                 {user && user.logined ? user.name : "Guest"}
               </span>
             </div>
 
-            {/* Dropdown */}
-            {menuOpen
-             && (
+            {menuOpen && (
               <div className="absolute right-0 w-40 mt-2 bg-white border rounded-lg shadow-lg border-amber-100">
                 <ul className="py-2 text-sm text-gray-700">
-                  {user.logined ? (
+                  {user?.logined ? (
                     <>
                       <li
                         onClick={() => {
@@ -137,7 +142,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Links */}
+      {/* Mobile Nav */}
       <div className="flex justify-around py-3 text-gray-700 border-t md:hidden border-amber-100 bg-amber-50">
         <span onClick={() => navigate("/")} className="cursor-pointer hover:text-amber-600">Home</span>
         <span onClick={() => navigate("/products")} className="cursor-pointer hover:text-amber-600">Products</span>

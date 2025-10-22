@@ -13,7 +13,7 @@ function Products() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  // ✅ Fetch categories and products (separately)
+  ////////////  Fetch categories and products (separately)
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -26,18 +26,18 @@ function Products() {
         const catRes = await api.get("/category");
         setCategories(catRes.data || []);
         // console.log(catRes.data);
-        
       } catch (err) {
         console.error(err);
         setError("Failed to load data");
-      } finally {
-        setLoading(false);
+      } 
+      finally {
+          setLoading(false);
       }
     };
     fetchData();
   }, []);
 
-  // ✅ Search filter
+  ////////////////  Search filter
   useEffect(() => {
     if (!products.length) return;
 
@@ -53,7 +53,7 @@ function Products() {
     setFiltered(result);
   }, [search, products]);
 
-  // ✅ Category filter (calls backend)
+  //////////// Category filter (calls backend)
   async function findByCategory(value) {
     setSelectedCategory(value);
 
@@ -65,7 +65,6 @@ function Products() {
     try {
       const res = await api.get(`/category/find/${value}`);
       if (res.data && res.data.products) {
-        
         setFiltered(res.data.products);
       } else {
         setFiltered([]);

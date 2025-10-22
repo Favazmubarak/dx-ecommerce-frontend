@@ -10,13 +10,13 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [user, setUser] = useState(null);
 
-  // ✅ Load user from sessionStorage
+  // Load user from sessionStorage
   useEffect(() => {
     const savedUser = JSON.parse(sessionStorage.getItem("user"));
     setUser(savedUser);
   }, []);
 
-  // ✅ Logout function
+  //  Logout function
   const handleLogout = () => {
     sessionStorage.removeItem("user");
     setUser(null);

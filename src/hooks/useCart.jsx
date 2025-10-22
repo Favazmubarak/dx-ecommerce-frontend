@@ -18,7 +18,7 @@ export const useCart = () => {
      })
      .catch((err) =>{
       console.log(err);
-      alert("Login pls")
+      alert("Not Logged")
      })
   }
 

@@ -18,7 +18,7 @@ const AdminOrders = () => {
       
     } catch (err) {
       console.error(err);
-      setError("⚠️ Failed to fetch orders");
+      setError(" Failed to fetch orders");
     } finally {
       setLoading(false);
     }
