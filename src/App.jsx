@@ -24,14 +24,14 @@ import OrderSuccess from "./pages/Users/OrderSuccess.jsx";
 import OrderDetails from "./pages/Users/OrderDetails.jsx";
 import Shop from "./pages/Users/Shop.jsx";
 // import AdminProfile from "./pages/Admin/AdminProfile.jsx";
+import NotFound from "./components/Error404.jsx";
 
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<PublicHome/>}></Route>
-
-
+         
         <Route path="/reg" element={<RegisterPage />}></Route>
         <Route path="/user/login" element={<UserLogin />}></Route>
         <Route path="/user/cart" element={<CartPage/>}/>
@@ -60,6 +60,7 @@ function App() {
         <Route path="/admin/orders" element={<AdminOrders/>}/>
         {/* <Route path="/admin/profile" element={<AdminProfile/>}/> */}
 
+        <Route path="*" element={<NotFound/>}></Route>
       </Routes>
     </>
   );
