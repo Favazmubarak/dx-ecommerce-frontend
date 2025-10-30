@@ -62,7 +62,7 @@ export default function SpecificProduct() {
             {/* Image Section */}
             <div className="flex-1 overflow-hidden bg-white border shadow-md rounded-3xl border-amber-100 group">
               <img
-                src={`http://localhost:3040${product.image}`}
+                src={`http://74.225.166.12/api/${product.image}`}
                 alt={product.name}
                 className="object-cover w-full h-[28rem] rounded-3xl transition-transform duration-500 group-hover:scale-105"
               />

@@ -96,7 +96,7 @@ function AdminProducts() {
                     >
                       <td className="px-4 py-3">
                         <img
-                          src={`http://localhost:3040${product.image}`}
+                          src={`http://74.225.166.12/api/${product.image}`}
                           alt={product.name}
                           className="object-cover w-16 h-16 mx-auto border rounded-md shadow-sm border-amber-200"
                         />

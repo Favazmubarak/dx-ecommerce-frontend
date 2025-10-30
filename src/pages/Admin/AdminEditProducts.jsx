@@ -168,7 +168,7 @@ function EditProduct() {
               <div className="mt-4 text-center">
                 <p className="mb-2 text-sm text-gray-600">Preview:</p>
                 <img
-                  src={`http://localhost:3040${preview}`}
+                  src={`http://74.225.166.12/api/${preview}`}
                   alt="Product Preview"
                   className="object-cover w-48 h-48 mx-auto border rounded-lg shadow-md border-amber-100"
                 />

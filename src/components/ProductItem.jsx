@@ -15,7 +15,7 @@ const ProductItem = ({ id, image, name, price }) => {
       {/* Image Container */}
       <div className="relative flex items-center justify-center w-full h-64 overflow-hidden bg-gray-100">
         <img
-          src={`http://localhost:3040${image}`}
+          src={`http://74.225.166.12/api/${image}`}
           alt={name}
           className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
         />

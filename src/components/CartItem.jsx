@@ -11,7 +11,7 @@ const CartItem = ({ item, onIncrease, onDecrease, onDelete }) => {
       <div className="flex items-start gap-6">
         <img
           className="w-16 rounded-lg sm:w-20"
-          src={`http://localhost:3040${product.image}`}
+          src={`http://74.225.166.12/api/${product.image}`}
           alt={product.name}
         />
         <div>

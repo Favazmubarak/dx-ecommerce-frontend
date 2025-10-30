@@ -40,7 +40,7 @@ const OneProductDetails = ({
 
             <div className="flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[18.7%] w-full">
               <img
-                src={`http://localhost:3040${image}`}
+                src={`http://74.225.166.12/api/${image}`}
                 alt="Product Thumbnail"
                 className="w-[24%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer rounded-lg hover:opacity-80 transition"
               />
@@ -48,7 +48,7 @@ const OneProductDetails = ({
 
             <div className="w-full sm:w-[80%]">
               <img
-                src={`http://localhost:3040${image}`}
+                src={`http://74.225.166.12/api/${image}`}
                 alt={name}
                 className="w-full h-auto shadow rounded-xl"
               />

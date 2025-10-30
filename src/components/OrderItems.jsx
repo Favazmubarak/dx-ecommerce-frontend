@@ -26,7 +26,7 @@ const OrderItems = ({ items = [] }) => {
                   {/* Product Image (if available) */}
                   {product.image ? (
                     <img
-                      src={`http://localhost:3040${product.image}`}
+                      src={`http://74.225.166.12/api/${product.image}`}
                       alt={product.id || "Product"}
                       className="object-cover w-12 h-12 border rounded-lg border-amber-200"
                     />
