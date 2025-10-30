@@ -63,7 +63,7 @@ const RegisterPage = () => {
       });
 
       alert(" Registration successful! Redirecting to login...");
-      navigate("/user/login", { replace: true });
+      navigate("/login", { replace: true });
     } catch (err) {
       if (err.response) {
         setError(err.response.data.error || "Registration failed");
