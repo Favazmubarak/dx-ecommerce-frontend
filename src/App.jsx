@@ -30,37 +30,35 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<PublicHome/>}></Route>
-         
+        <Route path="/" element={<PublicHome />}></Route>
+
         <Route path="/reg" element={<RegisterPage />}></Route>
         <Route path="/login" element={<UserLogin />}></Route>
-        <Route path="/user/cart" element={<CartPage/>}/>
-        <Route path="/user/orders" element={<UserOrders/>}/>
-        <Route path="/products/:id" element={<SpecificProducts/>}/>
-        <Route path="/products" element={<UserProducts/>}/>
-        <Route path="/contact" element={<UserContact/>}/>
-        <Route path="/profile" element={<Profile/>}/>
-        <Route path="/placeorder" element={<CheckOut/>}/>
-        <Route path="/order-success" element={<OrderSuccess/>}/>
-        <Route path="/orders/:id" element={<OrderDetails/>}/>
-        <Route path="/shop/:id" element={<Shop/>}/>
-        <Route path="/shop" element={<Shop/>}/>
-
-        
+        <Route path="/user/cart" element={<CartPage />} />
+        <Route path="/user/orders" element={<UserOrders />} />
+        <Route path="/products/:id" element={<SpecificProducts />} />
+        <Route path="/products" element={<UserProducts />} />
+        <Route path="/contact" element={<UserContact />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/placeorder" element={<CheckOut />} />
+        <Route path="/order-success" element={<OrderSuccess />} />
+        <Route path="/orders/:id" element={<OrderDetails />} />
+        <Route path="/shop/:id" element={<Shop />} />
+        <Route path="/shop" element={<Shop />} />
 
         <Route path="/admin/login" element={<AdminLogin />}></Route>
         <Route path="/admin/users" element={<UsersList />}></Route>
         <Route path="/admin/home" element={<AdminHome />}></Route>
         <Route path="admin/products" element={<AdminProducts />}></Route>
-        <Route path="/admin/products/add" element={<CreateProduct/>}/>
-        <Route path="/admin/products/:id" element={<EditProduct/>}/>
+        <Route path="/admin/products/add" element={<CreateProduct />} />
+        <Route path="/admin/products/:id" element={<EditProduct />} />
         <Route path="/admin/categories" element={<AdminCategories />}></Route>
         <Route path="/admin/category" element={<AdminAddCategory />} />
-        <Route path="/admin/categories/:id" element={<AdminCategoryEdit/>}/>
-        <Route path="/admin/orders" element={<AdminOrders/>}/>
+        <Route path="/admin/categories/:id" element={<AdminCategoryEdit />} />
+        <Route path="/admin/orders" element={<AdminOrders />} />
         {/* <Route path="/admin/profile" element={<AdminProfile/>}/> */}
 
-        <Route path="*" element={<NotFound/>}></Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </>
   );

@@ -3,7 +3,12 @@ import api from "../../services/axios";
 import Navbar from "../../components/UserNavbar";
 import Footer from "../../components/Footer";
 import { useNavigate } from "react-router-dom";
-import { FaBoxOpen, FaClock, FaCheckCircle, FaTimesCircle } from "react-icons/fa";
+import {
+  FaBoxOpen,
+  FaClock,
+  FaCheckCircle,
+  FaTimesCircle,
+} from "react-icons/fa";
 
 const UserOrders = () => {
   const [orders, setOrders] = useState([]);
@@ -17,7 +22,6 @@ const UserOrders = () => {
         const res = await api.get("/orders");
         setOrders(res.data.orders);
         console.log(res);
-        
       } catch (err) {
         console.log(err);
         setError("Failed to fetch your orders");
